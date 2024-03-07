@@ -47,7 +47,7 @@ pipeline {
 
 def sendStatusEmail(emailAddress, status) {
     renderStatus = status == 'SUCCESSFUL' ? "<b style='color:#008000'>$status</b>" : "<b style='color:#FF0000'>$status</b>"
-    mail from: '"Muhittin" kutay.bekleric@aselsis.com.tr',
+    mail from: '"Muhittin" <kutay.bekleric@aselsis.com.tr>',
         to: emailAddress,
         mimeType: 'text/html',
         charset: 'UTF-8',
