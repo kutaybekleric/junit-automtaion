@@ -47,10 +47,11 @@ pipeline {
 
 def sendStatusEmail(emailAddress, status) {
     renderStatus = status == 'SUCCESSFUL' ? "<b style='color:#008000'>$status</b>" : "<b style='color:#FF0000'>$status</b>"
-    mail to: emailAddress,
+    mail from: 'kutay.bekleric@aselsis.com.tr'
+        to: emailAddress,
         mimeType: 'text/html',
         charset: 'UTF-8',
-        subject: "[plugin-manager] Build of $env.GIT_BRANCH was $status",
+        subject: "[muhittin] Build of $env.GIT_BRANCH was $status",
         body: """
             Build <b>#$env.BUILD_NUMBER</b> of <b>$env.GIT_BRANCH</b> for commit $env.GIT_COMMIT was $renderStatus on <b>$env.NODE_NAME</b>.</br>
             Details: $env.BUILD_URL
