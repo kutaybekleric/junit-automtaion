@@ -37,11 +37,11 @@ pipeline {
     post {
         failure {
             sendStatusEmail('kutay.bekleric@aselsis.com.tr', 'FAILED')
-            slackSend channel: 'D069EPAU53P', message: "Build of $env.GIT_BRANCH failed! Details: $env.BUILD_URL"
+            slackSend channel: 'D069EPAU53P', message: "Project Muhittin, Build of $env.GIT_BRANCH failed! Details: $env.BUILD_URL"
         }
         success {
             sendStatusEmail('kutay.bekleric@aselsis.com.tr', 'SUCCESSFUL')
-            slackSend channel: 'D069EPAU53P', message: "Build of $env.GIT_BRANCH was successful! Details: $env.BUILD_URL"
+            slackSend channel: 'D069EPAU53P', message: "Project Muhittin, Build of $env.GIT_BRANCH was successful! Details: $env.BUILD_URL"
         }
     }
 
@@ -49,7 +49,7 @@ pipeline {
 
 def sendStatusEmail(emailAddress, status) {
     renderStatus = status == 'SUCCESSFUL' ? "<b style='color:#008000'>$status</b>" : "<b style='color:#FF0000'>$status</b>"
-    mail from: '"Muhittin" <kutay.bekleric@aselsis.com.tr>',
+    mail from: 'Muhittin <kutay.bekleric@aselsis.com.tr>',
         to: emailAddress,
         mimeType: 'text/html',
         charset: 'UTF-8',
