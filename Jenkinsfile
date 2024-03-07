@@ -36,10 +36,10 @@ pipeline {
 
     post {
         failure {
-            sendStatusEmail('selamgenc01@gmail.com', 'FAILED')
+            sendStatusEmail('batuhan.sari@aselsis.com.tr', 'FAILED')
         }
         success {
-            sendStatusEmail('selamgenc01@gmail.com', 'SUCCESSFUL')
+            sendStatusEmail('batuhan.sari@aselsis.com.tr', 'SUCCESSFUL')
         }
     }
 
