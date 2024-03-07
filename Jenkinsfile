@@ -36,10 +36,10 @@ pipeline {
 
     post {
         failure {
-            sendStatusEmail(GIT_COMMITTER_EMAIL, 'FAILED')
+            sendStatusEmail(selamgenc01@gmal.com, 'FAILED')
         }
         success {
-            sendStatusEmail(GIT_COMMITTER_EMAIL, 'SUCCESSFUL')
+            sendStatusEmail(selamgenc01@gmal.com, 'SUCCESSFUL')
         }
     }
 
@@ -56,3 +56,4 @@ def sendStatusEmail(emailAddress, status) {
             Details: $env.BUILD_URL
         """.stripIndent()
 }
+
