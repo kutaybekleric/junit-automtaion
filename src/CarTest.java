@@ -11,7 +11,7 @@ public class CarTest {
     @Test
     public void testMake(){
         System.out.println("Running Test 1!");
-        Assertions.assertEquals(make, "HONDAA","Expected vehicle make did not match actual vehicle make"); 
+        Assertions.assertEquals(make, "Honda","Expected vehicle make did not match actual vehicle make"); 
     }
 
     @Test 
