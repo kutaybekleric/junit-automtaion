@@ -36,10 +36,12 @@ pipeline {
 
     post {
         failure {
-            sendStatusEmail('kutay.bekleric@aselsis.com.tr', 'FAILED')
+            sendStatusEmail('kutay.bekleric@aselsis.com.tr', 'FAILED'
+            slackSend channel: 'D069EPAU53P', message: "Build of $env.GIT_BRANCH failed! Details: $env.BUILD_URL")
         }
         success {
             sendStatusEmail('kutay.bekleric@aselsis.com.tr', 'SUCCESSFUL')
+            slackSend channel: 'D069EPAU53P', message: "Build of $env.GIT_BRANCH was successful! Details: $env.BUILD_URL"
         }
     }
 
